@@ -30,11 +30,18 @@ namespace ExtensionTest
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.checkedListBox3 = new System.Windows.Forms.CheckedListBox();
@@ -47,8 +54,6 @@ namespace ExtensionTest
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
@@ -56,13 +61,18 @@ namespace ExtensionTest
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.numericUpDown1);
-            this.panel1.Controls.Add(this.maskedTextBox1);
             this.panel1.Controls.Add(this.linkLabel1);
             this.panel1.Controls.Add(this.checkBox1);
             this.panel1.Controls.Add(this.checkedListBox3);
@@ -78,6 +88,78 @@ namespace ExtensionTest
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(831, 478);
             this.panel1.TabIndex = 0;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(117, 158);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(146, 20);
+            this.textBox3.TabIndex = 52;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(117, 187);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(146, 20);
+            this.textBox2.TabIndex = 51;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(269, 185);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 50;
+            this.button2.Text = "Do it";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(26, 190);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(85, 13);
+            this.label10.TabIndex = 49;
+            this.label10.Text = "Change Favicon";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(269, 156);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 47;
+            this.button1.Text = "Do it";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(26, 161);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(67, 13);
+            this.label9.TabIndex = 46;
+            this.label9.Text = "Change Title";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Black;
+            this.panel2.ForeColor = System.Drawing.Color.White;
+            this.panel2.Location = new System.Drawing.Point(350, 70);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(2, 170);
+            this.panel2.TabIndex = 45;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(26, 76);
+            this.label8.MaximumSize = new System.Drawing.Size(300, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(274, 52);
+            this.label8.TabIndex = 44;
+            this.label8.Text = "If you see all the red squares and they are aligned to the corners to your window" +
+    ", then resizing works\r\n\r\nUse the boxes below to test Title/Favicon change";
             // 
             // label7
             // 
@@ -115,13 +197,6 @@ namespace ExtensionTest
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
             this.numericUpDown1.TabIndex = 36;
-            // 
-            // maskedTextBox1
-            // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(468, 386);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBox1.TabIndex = 35;
             // 
             // linkLabel1
             // 
@@ -191,6 +266,7 @@ namespace ExtensionTest
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Red;
             this.label3.ForeColor = System.Drawing.Color.White;
@@ -202,6 +278,7 @@ namespace ExtensionTest
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Red;
             this.label2.ForeColor = System.Drawing.Color.White;
@@ -224,6 +301,7 @@ namespace ExtensionTest
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Red;
             this.label5.ForeColor = System.Drawing.Color.White;
@@ -232,26 +310,6 @@ namespace ExtensionTest
             this.label5.Size = new System.Drawing.Size(49, 13);
             this.label5.TabIndex = 45;
             this.label5.Text = "Top right";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(26, 76);
-            this.label8.MaximumSize = new System.Drawing.Size(300, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(279, 26);
-            this.label8.TabIndex = 44;
-            this.label8.Text = "If you see all the red squares and they sare aligned to the corners to your windo" +
-    "w, then resizing works";
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Black;
-            this.panel2.ForeColor = System.Drawing.Color.White;
-            this.panel2.Location = new System.Drawing.Point(350, 70);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(2, 170);
-            this.panel2.TabIndex = 45;
             // 
             // UserControl1
             // 
@@ -284,7 +342,6 @@ namespace ExtensionTest
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.CheckedListBox checkedListBox3;
@@ -297,5 +354,11 @@ namespace ExtensionTest
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }

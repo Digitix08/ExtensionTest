@@ -10,8 +10,10 @@ namespace ExtensionTest
 {
     public partial class Form1 : Form
     {
-        public Form1()
+        IGExtHandle Handler;
+        public Form1(IGExtHandle handle)
         {
+            Handler = handle;
             InitializeComponent();
         }
     }
