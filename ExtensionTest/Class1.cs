@@ -15,10 +15,10 @@ namespace ExtensionTest
         Assembly asm = Assembly.GetExecutingAssembly();
 
         public string Id => "ee380a76-716a-41d8-bb33-912710aab027";//created with c# interactive. must be unique
-        public string Name => ((AssemblyTitleAttribute)Attribute.GetCustomAttribute(asm, typeof(AssemblyTitleAttribute))).Title;
-        public string Version => asm.GetName().Version.ToString();
-        public string Author => ((AssemblyCompanyAttribute)Attribute.GetCustomAttribute(asm, typeof(AssemblyCompanyAttribute))).Company;
-        public string Description => ((AssemblyDescriptionAttribute)Attribute.GetCustomAttribute(asm, typeof(AssemblyDescriptionAttribute))).Description;
+        public string Name => ((AssemblyTitleAttribute)Attribute.GetCustomAttribute(asm, typeof(AssemblyTitleAttribute))).Title ?? "IGExtV2 extension";
+        public string Version => asm.GetName().Version.ToString() ?? "";
+        public string Author => ((AssemblyCompanyAttribute)Attribute.GetCustomAttribute(asm, typeof(AssemblyCompanyAttribute))).Company ?? "";
+        public string Description => ((AssemblyDescriptionAttribute)Attribute.GetCustomAttribute(asm, typeof(AssemblyDescriptionAttribute))).Description ?? "";
         public string MinVersion => "1.2.6";
 
         public bool SupportsHistory => true;
@@ -28,12 +28,12 @@ namespace ExtensionTest
         public bool SupportsFullScreen => false;
         public bool SupportsResize => true;
 
-        public void Initialize(IHostContext host) { ext = new IGExtension(this); Host = host; }
+        public void Initialize(IHostContext host) { ext = new IGExtension(this); Host = host; host.Log(Name + " version " + Version + " initialized" + Environment.NewLine + Environment.NewLine + Id); }
         public void OnLoaded() { }
         public void OnUnloaded() { }
 
         // ITab
-        public string Title => "Maz Fira Tab";
+        public string Title => "Extension Test";
         public string Favicon => "";
         public event Action<string> TitleChanged;
         public event Action<string> FaviconChanged;
@@ -68,6 +68,9 @@ namespace ExtensionTest
         public void OnWindowOpened() { ext.CreateWindow(); }
         public void OnWindowClosing() { }
 
+        //extras
+        public void Log(string message) { Host.Log(message + Environment.NewLine + Environment.NewLine + Id); }
+
         // Extra metadata
         public string Icon => "icons/notes.png";
     }
@@ -87,12 +90,14 @@ namespace ExtensionTest
         public void CreateTab()
         {
             UserControl1 tester = new UserControl1(handler);
+            handler.Log("Tab created");
             displayElem = tester.Handle;
         }
 
         public void CreateWindow()
         {
             Form1 tester = new Form1(handler);
+            handler.Log("Window created");
             tester.Show();
         }
 

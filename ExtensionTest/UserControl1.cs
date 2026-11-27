@@ -43,5 +43,10 @@ namespace ExtensionTest
                     }
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Handler.Log(textBox4.Text);
+        }
     }
 }
